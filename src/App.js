@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import AppHeader from "./Components/AppHeader";
+import MyTopic from "./Components/MyTopic";
+import MyTopicPopUp from "./Components/MyTopicPopUp";
+import topics from "./Data/Topics";
+import contents from "./Data/Contents";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
+  function onTopicOpenClick(theTopic){
+    setSelectedTopic(theTopic)
+  }
+
+  function onTopicCloseClick(){
+    setSelectedTopic(null);
+  }
+
+  const topicElement = topics.map((topic, index) => {
+    return <MyTopic key={index} topic={topic} onTopicClick={onTopicOpenClick}/>; //แปลง array เป็น component
+  });
+
+  let mytopicpopup = null;
+  if(!!selectedTopic){
+    mytopicpopup = <MyTopicPopUp topic={selectedTopic} onBgClick={onTopicCloseClick}/>
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppHeader />
+      <div className="App-grid">{topicElement}</div>
+      {mytopicpopup}
     </div>
   );
 }
