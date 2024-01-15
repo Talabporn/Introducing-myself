@@ -4,7 +4,6 @@ import AppHeader from "./Components/AppHeader";
 import MyTopic from "./Components/MyTopic";
 import MyTopicPopUp from "./Components/MyTopicPopUp";
 import topics from "./Data/Topics";
-import contents from "./Data/Contents";
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState(null);

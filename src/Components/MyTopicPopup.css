@@ -72,12 +72,6 @@
 .color-personal p{
     color: #89CFFD;
 }
-/*
-.color-skill p::before {
-    content: "• ";
-    color: #FF7F3F;
-  }
-*/
 .color-skill p{
     color: #FF7F3F;
 }
@@ -89,41 +83,3 @@
 .color-dream p{
     color: #FBDF07;
 }
-/*
-.topic-popup{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.topic-popup-bg{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.422);
-}
-.topic-popup-content{
-    position: relative; 
-    max-width: 1200px;
-    background-color: black;
-}
-.topic-popup-content img{
-    display: block;
-    max-width: 50%;
-    max-height: calc(100vh-120px);
-    margin-left: 0px;
-    margin-right: auto;
-}
-.topic-popup-content-text h4{
-    color: white;
-    text-align: left;
-    font-family: sans-serif;
-}
-*/
